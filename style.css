@@ -1,0 +1,515 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --lightblue: #00bcf2;
+  --blue: #0072be;
+  --stable-blue: #0076bf;
+  --midblue: #00188f;
+  --darkblue: #002050;
+  --lightpurple: #b4a0ff;
+  --purple: #5c2d91;
+  --darkpurple: #373277;
+  --lightmagenta: #e3008c;
+  --magenta: #b4009e;
+  --darkmagenta: #5c005c;
+  --red: #e81123;
+  --darkred: #a80000;
+  --lightorange: #ff8c00;
+  --orange: #d83b01;
+  --insiders-green: #058f2d;
+  --lightyellow: #fff100;
+  --yellow: #ffcc00;
+  --lightgreen: #bad80a;
+  --green: #477a32;
+  --darkgreen: #004b1c;
+  --lightteal: #00b294;
+  --teal: #008272;
+  --darkteal: #004b50;
+  --gray-95: darken( white, 5% );
+  --lightgray: #e3e3e3;
+  --gray: #ccc;
+  --darkgray: #333;
+  --white: #ffffff;
+  --black: #000000;
+  --background: #0e0e0e;
+  --foreground: #9ba3b4;
+  --header-foreground: #e9eaeb;
+  --accent-primary: #0078d4;
+  --accent-secondary: #0069b9;
+  --link-foreground: #4daafc;
+  --link-foreground-hover: #8fc3fe;
+  --link-underline-background: var(--link-foreground);
+  --background: #0e0e0e;
+  --border-background: rgba(255,255,255,0.12);
+  --header-background: var(--background);
+  --footer-background: var(--background);
+  --button-primary-background: var(--accent-primary);
+  --button-primary-foreground: var(--white);
+  --button-secondary-background: var(--background);
+  --button-secondary-foreground: var(--foreground);
+  --button-secondary-border: rgba(255,255,255,0.3);
+  --icon-button-hover-background: rgba(255,255,255,0.10);
+  --navbar-border: var(--border-background);
+  --search-input-background: transparent;
+  --search-input-border: rgba(255,255,255,0.15);
+  --search-input-border-active: var(--accent-primary);
+  --search-input-foreground: var(--foreground);
+  --search-input-placeholder-foreground: #9ba3b4;
+  --card-background: rgba(255,255,255,0.04);
+  --card-hover-background: rgba(255,255,255,0.08);
+  --card-border: rgba(255,255,255,0.07);
+  --card-border-active: rgba(255,255,255,0.2);
+  --feature-card-icon-background: rgba(255,255,255,0.07);
+  --banner-background: var(--background);
+  --banner-link-color: var(--link-foreground);
+  --banner-text: var(--foreground);
+  --hero-background: linear-gradient(180deg, #0e0e0e 0%, #141414 100%);
+  --hero-border-bottom: var(--border-background);
+  --home-foreground: var(--foreground);
+  --code-background: rgba(255,255,255,0.15);
+  --code-foreground: #cccccc;
+  --keybinding-background: rgba(255,255,255,0.15);
+  --keybinding-foreground: var(--link-foreground);
+}
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+nav {
+  background-color: var(--background);
+  position: fixed;
+  width: 100%;
+}
+
+#navbar {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#navbar .left {
+  display: flex;
+  align-items: center;
+}
+#navbar .left .logoandtitle {
+  display: flex;
+}
+#navbar .left .logoandtitle .logo img {
+  width: 30px;
+  margin-right: 1rem;
+}
+#navbar .left .logoandtitle a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+#navbar .left .links {
+  display: flex;
+}
+#navbar .left .links li {
+  list-style: none;
+}
+#navbar .left .links li a {
+  text-decoration: none;
+  color: var(--foreground);
+  margin-left: 1rem;
+}
+#navbar .left .links li a:hover {
+  color: var(--code-foreground);
+}
+#navbar .right {
+  display: flex;
+  align-items: center;
+}
+#navbar .right .light {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+#navbar .right .light .fas {
+  font-size: 1.5rem;
+}
+#navbar .right .search {
+  border: 1px solid var(--border-background);
+  background-color: var(--background);
+  height: 40px;
+  border-radius: 0.3rem;
+  outline: none;
+}
+#navbar .right .search .fas {
+  color: var(--foreground);
+  margin-right: 0.5rem;
+  margin-left: 0.8rem;
+}
+#navbar .right .search input {
+  background-color: var(--search-input-background);
+  border: none;
+  height: 100%;
+  color: var(--foreground);
+  font-size: 1rem;
+}
+#navbar .right .search input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+#navbar .right .download {
+  background-color: var(--accent-primary);
+  height: 40px;
+  border: none;
+  border-radius: 0.3rem;
+  margin-left: 1rem;
+}
+#navbar .right .download a {
+  text-decoration: none;
+  color: var(--white);
+  border: none;
+  border-radius: 90%;
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+#navbar .right .download:hover {
+  background-color: var(--accent-secondary);
+}
+
+.hero {
+  background: var(--hero-background);
+  padding-top: 10rem;
+  height: 850px;
+  border-bottom: 1px solid var(--hero-border-bottom);
+}
+.hero #hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero #hero .left {
+  color: var(--foreground);
+}
+.hero #hero .left h3 {
+  border: 1px solid var(--card-border);
+  color: var(--foreground);
+  background-color: var(--card-background);
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.7rem;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.hero #hero .left h1 {
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 600;
+}
+.hero #hero .left h2 {
+  background-color: var(--accent-primary);
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+.hero #hero .left h2 a {
+  text-decoration: none;
+  color: var(--white);
+  border: none;
+  border-radius: 90%;
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.hero #hero .left h2:hover {
+  background-color: var(--accent-secondary);
+}
+.hero #hero .left h4 {
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-weight: 400;
+}
+.hero #hero .left h4 a {
+  color: var(--accent-primary);
+}
+.hero #hero .left h5 {
+  margin-top: 1rem;
+  font-weight: 400;
+}
+.hero #hero .left h5 a {
+  color: var(--accent-primary);
+}
+.hero #hero .right img {
+  width: 800px;
+}
+
+.code {
+  background-color: var(--background);
+}
+
+#code {
+  color: var(--white);
+}
+#code .first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+}
+#code .first .left h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+}
+#code .first .left p {
+  color: var(--foreground);
+  width: 400px;
+  margin-top: 1rem;
+}
+#code .first .right .box {
+  display: flex;
+}
+#code .first .right .box .lang {
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
+  width: 250px;
+  margin-bottom: 1rem;
+}
+#code .first .right .box .lang img {
+  width: 40px;
+}
+#code .second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8rem;
+}
+#code .second .left h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+}
+#code .second .left a {
+  display: inline-block;
+  color: var(--accent-primary);
+  margin-top: 0.8rem;
+}
+#code .second .left a:hover {
+  color: var(--accent-secondary);
+}
+#code .second .left p {
+  color: var(--foreground);
+  width: 400px;
+  margin-top: 1rem;
+}
+#code .second .right .box {
+  display: flex;
+  justify-content: space-between;
+}
+#code .second .right .box .lefta .smbox, #code .second .right .box .mid .smbox, #code .second .right .box .right .smbox {
+  display: flex;
+  text-decoration: none;
+  border: 1px solid var(--card-border);
+  background-color: var(--card-background);
+  height: 100px;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  margin: 1rem 0.5rem;
+}
+#code .second .right .box .lefta .smbox .leftb img, #code .second .right .box .mid .smbox .leftb img, #code .second .right .box .right .smbox .leftb img {
+  width: 50px;
+}
+#code .second .right .box .lefta .smbox .right, #code .second .right .box .mid .smbox .right, #code .second .right .box .right .smbox .right {
+  margin-left: 1rem;
+}
+#code .second .right .box .lefta .smbox .right h1, #code .second .right .box .mid .smbox .right h1, #code .second .right .box .right .smbox .right h1 {
+  color: var(--white);
+  font-size: 1rem;
+}
+#code .second .right .box .lefta .smbox .right p, #code .second .right .box .mid .smbox .right p, #code .second .right .box .right .smbox .right p {
+  width: 150px;
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--foreground);
+}
+#code .third {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  align-items: center;
+}
+#code .third .left h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+}
+#code .third .left a {
+  color: var(--accent-primary);
+  margin-top: 0.8rem;
+  display: inline-block;
+}
+#code .third .left a:hover {
+  color: var(--accent-secondary);
+}
+#code .third .left p {
+  color: var(--foreground);
+  width: 400px;
+  margin-top: 1rem;
+}
+#code .third .left p a {
+  color: var(--accent-primary);
+}
+#code .third .left p a:hover {
+  color: var(--accent-secondary);
+}
+#code .third .right img {
+  width: 700px;
+}
+#code .fouth {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rem;
+  align-items: center;
+}
+#code .fouth .left h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+}
+#code .fouth .left p {
+  color: var(--foreground);
+  width: 400px;
+  margin-top: 1rem;
+}
+#code .fouth .left p a {
+  color: var(--accent-primary);
+}
+#code .fouth .left p a:hover {
+  color: var(--accent-secondary);
+}
+#code .fouth .right img {
+  width: 700px;
+}
+#code .fifth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8rem;
+  padding-bottom: 8rem;
+}
+#code .fifth .left h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+}
+#code .fifth .left p {
+  color: var(--foreground);
+  width: 400px;
+  margin-top: 1rem;
+}
+#code .fifth .left p a {
+  color: var(--accent-primary);
+}
+#code .fifth .left p a:hover {
+  color: var(--accent-secondary);
+}
+#code .fifth .right img {
+  width: 700px;
+}
+
+.cards {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+.cards #cards {
+  padding-bottom: 5rem;
+}
+.cards #cards h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+.cards #cards h3 {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+.cards #cards .box .upper, .cards #cards .box .lower {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.cards #cards .box .upper .card, .cards #cards .box .lower .card {
+  border-radius: 1rem;
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  padding: 0rem 1rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+.cards #cards .box .upper .card h1, .cards #cards .box .lower .card h1 {
+  font-size: 1rem;
+  color: var(--white);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+.cards #cards .box .upper .card p, .cards #cards .box .lower .card p {
+  width: 290px;
+}
+.cards #cards .box .upper .card img, .cards #cards .box .lower .card img {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--card-background);
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  background-color: var(--background);
+  padding-bottom: 5rem;
+}
+footer #footer {
+  display: flex;
+  justify-content: space-between;
+}
+footer #footer .left .upper {
+  display: flex;
+  margin-bottom: 1rem;
+}
+footer #footer .left .upper li {
+  list-style: none;
+}
+footer #footer .left .upper li a img {
+  width: 30px;
+  margin-left: 1rem;
+}
+footer #footer .left .lower {
+  display: flex;
+}
+footer #footer .left .lower li {
+  list-style: none;
+}
+footer #footer .left .lower li a {
+  text-decoration: none;
+  margin-left: 1rem;
+  color: var(--foreground);
+  font-size: 0.8rem;
+}/*# sourceMappingURL=style.css.map */
