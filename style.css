@@ -278,6 +278,7 @@ nav {
 }
 #code .first .right .box {
   display: flex;
+  flex-wrap: wrap;
 }
 #code .first .right .box .lang {
   color: var(--foreground);
@@ -292,6 +293,7 @@ nav {
 }
 #code .second {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 8rem;
@@ -317,6 +319,7 @@ nav {
 #code .second .right .box {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 #code .second .right .box .lefta .smbox, #code .second .right .box .mid .smbox, #code .second .right .box .right .smbox {
   display: flex;
@@ -512,4 +515,73 @@ footer #footer .left .lower li a {
   margin-left: 1rem;
   color: var(--foreground);
   font-size: 0.8rem;
+}
+
+@media (max-width: 1440px) {
+  nav {
+    display: none;
+  }
+  .hero {
+    height: 100%;
+  }
+  .hero #hero {
+    flex-direction: column;
+  }
+  .hero #hero .right img {
+    margin: 1rem;
+    width: 100%;
+  }
+  .code #code .first {
+    flex-direction: column;
+  }
+  .code #code .first .left {
+    margin-bottom: 1rem;
+  }
+  .code #code .second {
+    flex-direction: column;
+  }
+  .code #code .second .left {
+    margin-bottom: 1rem;
+  }
+  .code #code .third .right img {
+    width: 100%;
+    margin: 1rem;
+  }
+  .code #code .fouth .right img {
+    margin: 1rem;
+    width: 100%;
+  }
+  .code #code .fifth .right img {
+    margin: 1rem;
+    width: 100%;
+  }
+  .cards #cards .box .upper .card, .cards #cards .box .lower .card {
+    margin: 1rem;
+  }
+}
+@media (max-width: 820px) {
+  .code #code .first .left p {
+    width: 100%;
+  }
+  .code #code .second .left p {
+    width: 100%;
+  }
+  .code #code .third, .code #code .fouth, .code #code .fifth {
+    flex-direction: column;
+  }
+  .code #code .third .left, .code #code .fouth .left, .code #code .fifth .left {
+    margin-bottom: 1rem;
+  }
+  .code #code .third .left p, .code #code .fouth .left p, .code #code .fifth .left p {
+    width: 100%;
+  }
+  .cards #cards h2 {
+    padding-top: 1rem;
+  }
+  .cards #cards h3 {
+    width: 100%;
+  }
+  .cards #cards .box .upper .card p, .cards #cards .box .lower .card p {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

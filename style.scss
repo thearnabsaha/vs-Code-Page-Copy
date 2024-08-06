@@ -279,6 +279,7 @@ nav{
         .right{
             .box{
                 display: flex;
+                flex-wrap: wrap;
                 .lang{
                     color: var(--foreground);
                     display: flex;
@@ -295,6 +296,7 @@ nav{
     }
     .second{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         padding-bottom: 8rem;
@@ -322,6 +324,7 @@ nav{
             .box{
                 display: flex;
                 justify-content: space-between;
+                flex-wrap: wrap;
                 .lefta,.mid,.right{
 
 
@@ -546,4 +549,126 @@ footer{
         }
     }
     padding-bottom: 5rem;
+}
+//? ######################### responsiveness #############################
+@media(max-width:1440px){
+    nav{
+        display: none;
+    }
+    .hero{
+        height: 100%;
+        #hero{
+            flex-direction: column;
+            .right{
+                img{
+                    margin: 1rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .code{
+        #code{
+            .first{
+                flex-direction: column;
+                .left{
+                    margin-bottom: 1rem;
+                }
+            }
+            .second{
+                flex-direction: column;
+                .left{
+                    margin-bottom: 1rem;
+                }
+            }
+            .third{
+                .right{
+                    img{
+                        width: 100%;
+                        margin: 1rem;
+                    }
+                }
+            }
+            .fouth{
+                .right{
+                    img{
+                        margin: 1rem;
+                        width: 100%;
+                    }
+                }
+            }
+            .fifth{
+                .right{
+                    img{
+                        margin: 1rem;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .cards{
+        #cards{
+            .box{
+                .upper,.lower{
+                    .card{
+                        margin: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:820px){
+    .code{
+        #code{
+            .first{
+                .left{
+                    p{
+                        width: 100%;
+                    }
+                }
+                .right{
+                    .box{
+                        // flex-direction: column;
+                    }
+                }
+            }
+            .second{
+                .left{
+                    p{
+                        width: 100%;
+                    }
+                }
+            }
+            .third,.fouth,.fifth{
+                flex-direction: column;
+                .left{
+                    margin-bottom: 1rem;
+                    p{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .cards{
+        #cards{
+            h2{
+                padding-top: 1rem;
+            }
+            h3{
+                width: 100%;
+            }
+            .box{
+                .upper,.lower{
+                    .card{
+                        p{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
